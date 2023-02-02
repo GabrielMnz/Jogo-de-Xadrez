@@ -24,7 +24,7 @@ namespace Xadrez {
             }
         }
 
-        public static void imprimirPecasCapturadas (PartidaDeXadrez partida) {
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida) {
             Console.WriteLine("Peças capturadas:");
             Console.Write("Brancas: ");
             imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
@@ -37,7 +37,7 @@ namespace Xadrez {
             Console.WriteLine();
         }
 
-        public static void imprimirConjunto (HashSet<Peca> conjunto) {
+        public static void imprimirConjunto(HashSet<Peca> conjunto) {
             Console.Write("[");
             foreach (Peca x in conjunto) {
                 Console.Write(x + " ");
@@ -67,11 +67,10 @@ namespace Xadrez {
                 for (int j = 0; j < tab.Colunas; j++) {
                     if (posicoesPossiveis[i, j]) {
                         Console.BackgroundColor = fundoAlterado;
-                    }
-                    else {
+                    } else {
                         Console.BackgroundColor = fundoOriginal;
                     }
-                    imprimirPeca(tab.peca(i,j));
+                    imprimirPeca(tab.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
                 }
                 Console.WriteLine();
@@ -90,12 +89,10 @@ namespace Xadrez {
         public static void imprimirPeca(Peca peca) {
             if (peca == null) {
                 Console.Write("- ");
-            }
-            else {
+            } else {
                 if (peca.cor == Cor.Branca) {
                     Console.Write(peca);
-                }
-                else {
+                } else {
                     ConsoleColor aux = ConsoleColor.White;
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write(peca);
